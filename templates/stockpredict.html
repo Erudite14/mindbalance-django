@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>MindBalance</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+    h2.mainPage{justify-self: end; color: turquoise; position: absolute; right: 16px; top: 10px;
+       }
+  </style>
+  </head>
+  <body class="w3-light-grey">
+    {{testvar}}
+    <img src="data:image/png; base64,{{uri}}" alt="" height="500", width="500">
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {#form.as_p#}
+      <div class="w3-third ">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Stock List Creation</li>
+          <li class="w3-padding-16">Title: {{form.title}}</li>
+          <li class="w3-padding-16">Uuid: {{form.uuid}}</li>
+          <li class="w3-padding-16">Start month: {{form.start_month}}</li>
+          <li class="w3-padding-16">Start day: {{form.start_day}}</li>
+          <li class="w3-padding-16">Start year: {{form.start_year}}</li>
+          <li class="w3-padding-16">End month: {{form.end_month}}</li>
+          <li class="w3-padding-16">End day: {{form.end_day}}</li>
+          <li class="w3-padding-16">End year: {{form.end_year}}</li>
+          <li class="w3-padding-16">Ticker symbol: {{form.ticker_symbol}}</li>
+          <li class="w3-padding-16">
+            <h2>-</h2>
+            <span class="w3-opacity">-</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+              <a class="w3-button w3-teal w3-padding-large w3-hover-black" href="{% url 'finance:cashflow_list' %}">Watch List</a>
+              <input class="w3-button w3-teal w3-padding-large w3-hover-black" type="submit" value="Save" name="prediction">
+          </li>
+        </ul>
+      </div>
+    </form>
+      <br>
+      <h2 class="mainPage"><a href="{% url 'finance:index' %}">Main Page</a></h2>
+  </body>
+</html>

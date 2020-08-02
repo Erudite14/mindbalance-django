@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>MindBalance</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!--
+    <img src="data:image/png; base64,{{uric}}" alt="" height="500", width="500">
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Present">
+    </form>
+  -->
+  <table border = "1" cellpadding = "5" cellspacing = "5">
+    <td>Dates</td>
+    <td>Cumulated Values</td>
+    <td>Actual Values</td>
+    {% for i in data%}
+    
+    <tr>
+        <td>{{i.Dates}}</td>
+        <td>{{i.CumulatedValues}}</td>
+        <td>{{i.ActualValues}}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+  </body>
+</html>
